@@ -1,0 +1,41 @@
+<center>
+<% if !@resume.errors.empty? %>
+   <div class = "alert alert-error">
+      
+      <ul>
+         <% @resume.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+         <% end %>
+      </ul>
+      
+   </div>
+<% end %>
+
+<div class = "well">
+   <%= form_for @resume, html: { multipart: true } do |f| %>
+   <br/>
+   <br/>
+ 
+      <%= f.text_field :name ,placeholder: "Имя"%>
+      <br/>
+      <br/>
+
+      <%= f.text_field :price ,placeholder: "Цена" %>
+      <br/>
+      <br/>
+
+      <%= f.text_field :time ,placeholder: "Время"%>
+      <br/>
+      <br/>
+
+      <%= f.text_field :col ,placeholder: "Количество раз" %>
+      <br/>
+      <br/>
+      <%= f.label :Дата %>
+      <%= f.date_field :date %>
+      <br/>
+      <br/>
+      <%= f.submit "Save", class: "btn btn-primary" %>
+   <% end %>
+</div>
+</center>

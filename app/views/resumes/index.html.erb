@@ -1,0 +1,49 @@
+<% if !flash[:notice].blank? %>
+   <div class = "alert alert-info">
+      <%= flash[:notice] %>
+   </div>
+<% end %>
+
+<br />
+
+<%= link_to "Новый посетитель", new_resume_path, class: "btn btn-primary" %>
+<br />
+<br />
+
+<table class = "table table-bordered table-striped">
+   <thead>
+      <tr>
+         <th>Имя</th>
+         <th>Цена</th>
+         <th>Время</th>
+         <th>Пришел</th>
+         <th>Дата</th>
+         <th>удалить</th>
+         <th>изменить</th>
+
+      </tr>
+   </thead>
+   
+   <tbody>
+      <% @resumes.each do |resume| %>
+         
+         <tr>
+            <td><%= resume.name %></td>
+            <td><%= resume.price%></td>
+            
+            <td><%= resume.time %></td>
+            <td><%= resume.col%></td>
+
+             <td><%= resume.date %></td>
+
+            <td><%= button_to "Delete",  resume, method: :delete, class: "btn btn-primary", confirm: "Are you sure that you wish to delete #{resume.name}?" %></td>
+
+            <td><%= link_to "Изминить", edit_resume_path(resume), class: 'btn btn-primary'%></td>
+
+
+    		</tr>
+         
+      <% end %>
+   </tbody>
+   
+</table>
