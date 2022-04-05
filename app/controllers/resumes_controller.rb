@@ -38,7 +38,7 @@ def index
    
    private
       def resume_params
-      params.require(:resume).permit(:name, :price, :time, :col, :date)
+      params.require(:resume).permit(:name, :price, :time, :col, :date, :oblast)
    end
    
 end

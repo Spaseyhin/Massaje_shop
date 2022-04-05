@@ -6,6 +6,7 @@ class CreateResumes < ActiveRecord::Migration[7.0]
       t.integer :price
       t.integer :col
       t.string :date
+      t.string :oblast
 
       t.timestamps
     end
