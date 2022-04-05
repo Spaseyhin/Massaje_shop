@@ -16,24 +16,23 @@
    <%= form_with model: @resume, url: resume_path(@resume), method: :patch, local: true do |f| %>
    <br/>
    <br/>
+      <p>Имя</p>
       <%= f.text_field :name ,placeholder: "Имя"%>
       <br/>
-      <br/>
 
+      <p>Цена</p>
       <%= f.text_field :price ,placeholder: "Цена" %>
       <br/>
-      <br/>
-
+      <p>Время</p>
       <%= f.text_field :time ,placeholder: "Время"%>
       <br/>
-      <br/>
-
+      <p>Количество</p>
       <%= f.text_field :col ,placeholder: "Количество раз" %>
+
+      <p>Область</p>
+      <%= f.text_field :oblast ,placeholder: "Область массажа"%>
       <br/>
       <br/>
-
-
-
       <%= f.submit "Save", class: "btn btn-primary" %>
    <% end %>
 </div>
