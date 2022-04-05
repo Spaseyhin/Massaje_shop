@@ -1,5 +1,6 @@
-Rails.application.routes.draw do
+# frozen_string_literal: true
 
-   resources :resumes
-   root "resumes#index"
+Rails.application.routes.draw do
+  resources :resumes
+  root 'resumes#index'
 end
